@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  postgres:
+      hostname: "localhost"
+      network_mode: "bridge"
+      environment:
+        - POSTGRES_USER=root
+        - POSTGRES_PASSWORD=123456
+      image: "postgres"
+      container_name: "postgres_1"
+      restart: always
+      volumes:
+        - ./db:/var/lib/postgresql/data
+      ports:
+        - 5432:5432
